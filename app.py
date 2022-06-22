@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from helpers import apology
+# from WTForms import Form, StringField
 
 # Configure application
 app = Flask(__name__)
@@ -21,6 +22,18 @@ def services():
 @app.route("/research")
 def research():
     return render_template("research.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/affiliates")
+def affiliates():
+    return render_template("affiliates.html")
+
+@app.route("/contact_us", methods=["GET", "POST"])
+def contact_us():
+    return render_template("contact_us.html")
 
 def errorhandler(e):
     """Handle error"""
