@@ -1,7 +1,22 @@
+import sys
+import logging
+from logging import Formatter
+
 from flask import Flask, render_template
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from helpers import apology
-# from WTForms import Form, StringField
+from wtforms import Form, StringField
+from flask_mail import Mail
+
+# Set up error handler logging
+def log_to_stderr(app):
+  handler = logging.StreamHandler(sys.stderr)
+  handler.setFormatter(Formatter(
+    '%(asctime)s %(levelname)s: %(message)s '
+    '[in %(pathname)s:%(lineno)d]'
+  ))
+  handler.setLevel(logging.WARNING)
+  app.logger.addHandler(handler)
 
 # Configure application
 app = Flask(__name__)
@@ -48,6 +63,13 @@ def errorhandler(e):
 # @login_required
 # def surgical_records():
 #     return render_template("surgical_records.html")
+
+# Error handling function for displaying HTTP errors
+def errorhandler(e):
+    """Handle error"""
+    if not isinstance(e, HTTPException):
+        e = InternalServerError()
+    return apology(e.name, e.code)
 
 if __name__ == "__main__":
     app.run()
