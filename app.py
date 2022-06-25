@@ -14,12 +14,7 @@ from flask_mail import Mail, Message
 app = Flask(__name__)
 
 # Email sender configuration for forms (credentials are for Mailtrap - DO NOT UPLOAD to Github)
-app.config['MAIL_SERVER']='smtp.mailtrap.io'
-app.config['MAIL_PORT'] = 2525
-app.config['MAIL_USERNAME'] = '8b3ad7288a197c'
-app.config['MAIL_PASSWORD'] = 'e274a3392a57c7'
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USE_SSL'] = False
+
 mail = Mail(app)
 
 # Set up error handler logging
@@ -85,7 +80,7 @@ def test_form():
         confirmation = "Message sent, we will be in touch! :)"
         return render_template("send_confirmation.html", confirmation=confirmation)
     else:
-        return render_template("test_form.html", form=form, confirmation=None)
+        return render_template("test_form.html", form=form)
 
 # To be build out after static part of website is complete and live
 # Requires libraries that have not been installed or imported yet, so leave commented for later
