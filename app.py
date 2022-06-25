@@ -1,12 +1,26 @@
+from email.message import Message
 import sys
 import logging
 from logging import Formatter
+from click import confirmation_option
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from helpers import apology
-from wtforms import Form, StringField
-from flask_mail import Mail
+from wtforms import Form, StringField, SubmitField, TextAreaField, validators
+from flask_mail import Mail, Message
+
+# Configure application name
+app = Flask(__name__)
+
+# Email sender configuration for forms (credentials are for Mailtrap - DO NOT UPLOAD to Github)
+app.config['MAIL_SERVER']='smtp.mailtrap.io'
+app.config['MAIL_PORT'] = 2525
+app.config['MAIL_USERNAME'] = '8b3ad7288a197c'
+app.config['MAIL_PASSWORD'] = 'e274a3392a57c7'
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False
+mail = Mail(app)
 
 # Set up error handler logging
 def log_to_stderr(app):
@@ -17,9 +31,6 @@ def log_to_stderr(app):
   ))
   handler.setLevel(logging.WARNING)
   app.logger.addHandler(handler)
-
-# Configure application
-app = Flask(__name__)
 
 # Website page routes
 @app.route("/")
@@ -50,11 +61,31 @@ def affiliates():
 def contact_us():
     return render_template("contact_us.html")
 
-def errorhandler(e):
-    """Handle error"""
-    if not isinstance(e, HTTPException):
-        e = InternalServerError()
-    return apology(e.name, e.code)
+# Test route for forms, remove/change in production
+@app.route("/test_form", methods=["GET", "POST"])
+def test_form():
+    class TestForm(Form):
+        name = StringField("Name")
+        email = StringField("Email", [validators.email()])
+        subject = StringField("Subject", [validators.Length(min = 5)])
+        message = TextAreaField("Message", [validators.Length(min=10)])
+        send_message = SubmitField()
+    form = TestForm()
+    if request.method == "POST" and form.validate():
+        contact_msg = {
+            "name" : form.name.data,
+            "email" : form.email.data,
+            "subject" : form.subject.data,
+            "message" : form.message.data
+        }
+        msg = Message(contact_msg["subject"], sender=(contact_msg["name"], contact_msg["email"]))
+        msg.body = contact_msg["message"]
+        msg.recipients = ["test@mailtrap.io"]
+        mail.send(msg)
+        confirmation = "Message sent, we will be in touch! :)"
+        return render_template("send_confirmation.html", confirmation=confirmation)
+    else:
+        return render_template("test_form.html", form=form, confirmation=None)
 
 # To be build out after static part of website is complete and live
 # Requires libraries that have not been installed or imported yet, so leave commented for later
@@ -72,4 +103,6 @@ def errorhandler(e):
     return apology(e.name, e.code)
 
 if __name__ == "__main__":
-    app.run()
+    log_to_stderr(app)
+    # Set debug mode to True for development
+    app.run(host="localhost", debug=True)
