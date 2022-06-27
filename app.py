@@ -4,17 +4,20 @@ import logging
 from logging import Formatter
 from click import confirmation_option
 
-from flask import Flask, render_template, request
+from flask import Flask, redirect, render_template, request
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from helpers import apology
-from wtforms import Form, StringField, SubmitField, TextAreaField, validators
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField, TextAreaField, validators
 from flask_mail import Mail, Message
 
 # Configure application name
 app = Flask(__name__)
 
-# Email sender configuration for forms (credentials are for Mailtrap - DO NOT UPLOAD to Github)
+# App configuration for (this file will not be uploaded to Github)
+app.config.from_pyfile('config.py')
 
+# Email initialisation
 mail = Mail(app)
 
 # Set up error handler logging
@@ -59,28 +62,32 @@ def contact_us():
 # Test route for forms, remove/change in production
 @app.route("/test_form", methods=["GET", "POST"])
 def test_form():
-    class TestForm(Form):
+    class TestForm(FlaskForm):
         name = StringField("Name")
         email = StringField("Email", [validators.email()])
-        subject = StringField("Subject", [validators.Length(min = 5)])
+        subject = StringField("Subject", [validators.Length(min=5)])
         message = TextAreaField("Message", [validators.Length(min=10)])
         send_message = SubmitField()
     form = TestForm()
-    if request.method == "POST" and form.validate():
+    if form.validate_on_submit():
         contact_msg = {
             "name" : form.name.data,
             "email" : form.email.data,
             "subject" : form.subject.data,
             "message" : form.message.data
         }
+        print(contact_msg)
         msg = Message(contact_msg["subject"], sender=(contact_msg["name"], contact_msg["email"]))
         msg.body = contact_msg["message"]
         msg.recipients = ["test@mailtrap.io"]
         mail.send(msg)
-        confirmation = "Message sent, we will be in touch! :)"
-        return render_template("send_confirmation.html", confirmation=confirmation)
+        return redirect("/send_confirmation")
     else:
         return render_template("test_form.html", form=form)
+
+@app.route("/send_confirmation")
+def send_confirmation():
+    return render_template("send_confirmation.html")
 
 # To be build out after static part of website is complete and live
 # Requires libraries that have not been installed or imported yet, so leave commented for later
@@ -100,4 +107,4 @@ def errorhandler(e):
 if __name__ == "__main__":
     log_to_stderr(app)
     # Set debug mode to True for development
-    app.run(host="localhost", debug=True)
+    app.run(host="localhost")
