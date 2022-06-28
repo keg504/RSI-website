@@ -76,10 +76,11 @@ def test_form():
             "subject" : form.subject.data,
             "message" : form.message.data
         }
-        print(contact_msg)
+
         msg = Message(contact_msg["subject"], sender=(contact_msg["name"], contact_msg["email"]))
         msg.body = contact_msg["message"]
         msg.recipients = ["test@mailtrap.io"]
+        print(msg)
         mail.send(msg)
         return redirect("/send_confirmation")
     else:
