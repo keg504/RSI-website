@@ -1,27 +1,18 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Contact Us
+    Test Form
 {% endblock %}
 
-
 {% block main %}
-  <!-- ======= Breadcrumbs ======= -->
-  <section id="breadcrumbs" class="breadcrumbs">
-    <div class="container">
-
-      <div class="d-flex justify-content-between align-items-center">
-        <h2>Contact</h2>
-        <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Contact</li>
-        </ol>
-      </div>
-
+    <!-- ======= Big Picture Section ======= -->
+    <section id="hero" class="d-flex align-items-center justify-content-center">
+        <div class="container position-relative">
+            <h1>Contact Us </h1>
     </div>
-  </section><!-- End Breadcrumbs -->
+    </section><!-- End Big Picture -->
 
-  <!-- ======= Contact Section ======= -->
+<!-- ======= Contact Section ======= -->
   <section id="contact" class="contact">
     <div class="container">
 
@@ -59,34 +50,16 @@
 
       </div>
 
-      <div class="row mt-5 justify-content-center" data-aos="fade-up">
-        <div class="col-lg-10">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-            <div class="row">
-              <div class="col-md-6 form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-              </div>
-              <div class="col-md-6 form-group mt-3 mt-md-0">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-              </div>
-            </div>
-            <div class="form-group mt-3">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-            </div>
-            <div class="form-group mt-3">
-              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-            </div>
-            <div class="my-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"> There was an issue sending your message. Please try again later.</div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
-          </form>
-        </div>
 
-      </div>
-
+    <div>
+        <form action="/test_form" method="post">
+            <div>
+                <div>{{ form.name.label }}: {{ form.name(placeholder="Your Name") }}</div>
+                <div>{{ form.email.label }}: {{ form.email(placeholder="Your email address") }}</div>
+            </div>
+            <div>{{ form.subject.label }}: {{ form.subject(placeholder="Subject") }}</div>
+            <div>{{ form.message.label }}: {{ form.message(placeholder="Your message to us") }}</div>
+            <div>{{ form.send_message() }}</div>
+        </form>
     </div>
-  </section><!-- End Contact Section -->
 {% endblock %}
