@@ -239,3 +239,26 @@
   });
 
 })()
+
+/**
+ * Change link colour on navbar when active page
+ */
+ function setActive() {
+  linkObj = document.getElementById('navbar').getElementsByTagName('a');
+  currentPage = window.location.href;
+  cURL_length = currentPage.length
+  for(i=0;i<linkObj.length;i++) 
+  {
+    pageLink = document.location.href.indexOf(linkObj[i].href);
+    if(pageLink>=0) 
+    {
+      linkObj[i].classList.add("active");
+      if(currentPage[currentPage.length-1]!=="/")
+      {
+        linkObj[0].classList.remove("active");
+      }
+    }
+  }
+}
+
+window.onload = setActive;

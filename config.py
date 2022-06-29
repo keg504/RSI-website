@@ -1,0 +1,9 @@
+TESTING = True
+MAIL_SERVER ='smtp.mailtrap.io'
+MAIL_PORT = 2525
+MAIL_USERNAME = '8b3ad7288a197c'
+MAIL_PASSWORD = 'e274a3392a57c7'
+MAIL_USE_TLS = True
+MAIL_USE_SSL = False
+SECRET_KEY = "Development_key"
+FLASK_DEBUG = True
