@@ -247,11 +247,14 @@
   linkObj = document.getElementById('navbar').getElementsByTagName('a');
   currentPage = window.location.href;
   cURL_length = currentPage.length
-  for(i=0;i<linkObj.length;i++) {
+  for(i=0;i<linkObj.length;i++) 
+  {
     pageLink = document.location.href.indexOf(linkObj[i].href);
-    if(pageLink>=0) {
+    if(pageLink>=0) 
+    {
       linkObj[i].classList.add("active");
-      if(currentPage[currentPage.length-1]!=="/"){
+      if(currentPage[currentPage.length-1]!=="/")
+      {
         linkObj[0].classList.remove("active");
       }
     }
