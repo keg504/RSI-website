@@ -6,14 +6,31 @@
 
 
 {% block main %}
-<main id="main">
-    <!-- ======= Big Picture Section ======= -->
-    <section id="hero" class="d-flex align-items-center justify-content-center">
-        <div class="container position-relative">
-            <h1>Research</h1>
-    </div>
-    </section><!-- End Big Picture -->
+<!-- ======= Big Picture Section ======= -->
+<section id="hero">
+  <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
+    <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+    <div class="carousel-inner" role="listbox">
+
+      <div class="carousel-item active" style="background-image: url(static/img/research/research.jpg)">
+        <div class="carousel-container">
+          <div class="container">
+            <h2 class="animate__animated animate__fadeInDown">Our Research</h2>
+            <p class="animate__animated animate__fadeInUp">Our research skjfa  klasdjfal ksdj.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- End Big Picture Section -->
+
+
+<main id="main">
 
     <!-- ======= Features Section ======= -->
     <section id="features" class="features">

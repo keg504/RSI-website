@@ -8,13 +8,30 @@
 {% block main %}
 
 <!-- ======= Big Picture Section ======= -->
-<section id="hero" class="d-flex align-items-center justify-content-center">
-    <div class="container position-relative">
-        <h1>Our Products </h1>
-</div>
-</section><!-- End Big Picture -->
+<section id="hero">
+  <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+    <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+    <div class="carousel-inner" role="listbox">
+
+      <div class="carousel-item active" style="background-image: url(static/img/products/products.jpg)">
+        <div class="carousel-container">
+          <div class="container">
+            <h2 class="animate__animated animate__fadeInDown">Our Products</h2>
+            <p class="animate__animated animate__fadeInUp">These are our products.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- End Big Picture Section -->
+
     
-    <!-- ======= Products Section ======= -->
+<!-- ======= Products Section ======= -->
 <main id="main">
   
   <section id="products" class="products">

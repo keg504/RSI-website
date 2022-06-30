@@ -6,13 +6,31 @@
 
 
 {% block main %}
-<main id="main">
-    <!-- ======= Big Picture Section ======= -->
-    <section id="hero" class="d-flex align-items-center justify-content-center">
-        <div class="container position-relative">
-            <h1>The Company About Innovation and Care</h1>
+<!-- ======= Big Picture Section ======= -->
+<section id="hero">
+  <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+    <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+    <div class="carousel-inner" role="listbox">
+
+      <div class="carousel-item active" style="background-image: url(static/img/about-us.jpg)">
+        <div class="carousel-container">
+          <div class="container">
+            <h2 class="animate__animated animate__fadeInDown">Who We Are</h2>
+            <p class="animate__animated animate__fadeInUp">RSI is a company helps to build rural surgical equipments.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-    </section><!-- End Big Picture -->
+
+  </div>
+</section>
+<!-- End Big Picture Section -->
+
+
+<main id="main">
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
