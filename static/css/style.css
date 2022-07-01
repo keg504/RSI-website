@@ -1029,17 +1029,26 @@ section {
   position: relative;
   box-shadow: 0 5px 25px 0 rgba(214, 215, 216, 0.6);
   background: #fff;
-  padding: 40px;
+  padding-bottom: 40px;
   /* z-index: 10; */
+}
+.affiliates .content img {
+  max-width: 300px;
+  max-height: 80px;
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 20px;
 }
 /* .affiliates .content {
   padding: 30px 30px 30px 0;
 } */
 .affiliates .content h3 {
-  font-weight: 700;
-  font-size: 34px;
+  font-weight: 650;
+  font-size: 33px;
   color: #2f4d5a;
   text-align: center;
+  margin-left: 15px;
+  margin-right: 15px;
   margin-top: 50px;
   /* margin-bottom: 30px; */
 }
