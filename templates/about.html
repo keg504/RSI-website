@@ -6,19 +6,37 @@
 
 
 {% block main %}
-<main id="main">
-    <!-- ======= Big Picture Section ======= -->
-    <section id="hero" class="d-flex align-items-center justify-content-center">
-        <div class="container position-relative">
-            <h1>The Company About Innovation and Care</h1>
+<!-- ======= Big Picture Section ======= -->
+<section id="hero">
+  <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+    <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+    <div class="carousel-inner" role="listbox">
+
+      <div class="carousel-item active" style="background-image: url(static/img/about-us.jpg)">
+        <div class="carousel-container">
+          <div class="container">
+            <h2 class="animate__animated animate__fadeInDown">Who We Are</h2>
+            <p class="animate__animated animate__fadeInUp">RSI is a company helps to build rural surgical equipments.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-    </section><!-- End Big Picture -->
+
+  </div>
+</section>
+<!-- End Big Picture Section -->
+
+
+<main id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <section id="about" class="missions">
         <div class="container">
   
-          <div class="row content">
+          <div class="row content" data-aos="fade-up">
             <div class="col-lg-6">
               <h2>Eum ipsam laborum deleniti velitena</h2>
               <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>
@@ -44,155 +62,40 @@
         </div>
       </section><!-- End About Section -->
   
-      <!-- ======= Team Section ======= -->
-      <section id="team" class="team section-bg">
-        <div class="container">
-  
-          <div class="section-title">
-            <h2>Team</h2>
-            <p>Our Hardowrking Team</p>
+    <!-- ======= Our Story Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        
+        <div class="row position-relative">
+
+          <div class="col-lg-7 about-img" style="background-image: url(assets/img/about.jpg);"></div>
+
+          <div class="col-lg-7">
+          <h2>Consequatur eius et magnam</h2>
+            <div class="our-story">
+              <h4>Est 1988</h4>
+              <h3>Our Story</h3>
+              <p>Inventore aliquam beatae at et id alias. Ipsa dolores amet consequuntur minima quia maxime autem. Quidem id sed ratione. Tenetur provident autem in reiciendis rerum at dolor. Aliquam consectetur laudantium temporibus dicta minus dolor.</p>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commo</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Duis aute irure dolor in reprehenderit in</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea</span></li>
+              </ul>
+              <p>Vitae autem velit excepturi fugit. Animi ad non. Eligendi et non nesciunt suscipit repellendus porro in quo eveniet. Molestias in maxime doloremque.</p>
+
+              <!-- <div class="watch-video d-flex align-items-center position-relative">
+                <i class="bi bi-play-circle"></i>
+                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox stretched-link">Watch Video</a>
+              </div> -->
+            </div>
           </div>
-  
-          <div class="row">
-  
-            <div class="col-lg-6">
-              <div class="member d-flex align-items-start">
-                <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
-                <div class="member-info">
-                  <h4>Walter White</h4>
-                  <span>Chief Executive Officer</span>
-                  <p>Explicabo voluptatem mollitia et repellat</p>
-                  <div class="social">
-                    <a href=""><i class="ri-twitter-fill"></i></a>
-                    <a href=""><i class="ri-facebook-fill"></i></a>
-                    <a href=""><i class="ri-instagram-fill"></i></a>
-                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <div class="col-lg-6 mt-4 mt-lg-0">
-              <div class="member d-flex align-items-start">
-                <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
-                <div class="member-info">
-                  <h4>Sarah Jhonson</h4>
-                  <span>Product Manager</span>
-                  <p>Aut maiores voluptates amet et quis</p>
-                  <div class="social">
-                    <a href=""><i class="ri-twitter-fill"></i></a>
-                    <a href=""><i class="ri-facebook-fill"></i></a>
-                    <a href=""><i class="ri-instagram-fill"></i></a>
-                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <div class="col-lg-6 mt-4">
-              <div class="member d-flex align-items-start">
-                <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
-                <div class="member-info">
-                  <h4>William Anderson</h4>
-                  <span>CTO</span>
-                  <p>Quisquam facilis cum velit laborum corrupti</p>
-                  <div class="social">
-                    <a href=""><i class="ri-twitter-fill"></i></a>
-                    <a href=""><i class="ri-facebook-fill"></i></a>
-                    <a href=""><i class="ri-instagram-fill"></i></a>
-                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <div class="col-lg-6 mt-4">
-              <div class="member d-flex align-items-start">
-                <div class="pic"><img src="assets/img/team/team-4.jpg" class="img-fluid" alt=""></div>
-                <div class="member-info">
-                  <h4>Amanda Jepson</h4>
-                  <span>Accountant</span>
-                  <p>Dolorum tempora officiis odit laborum officiis</p>
-                  <div class="social">
-                    <a href=""><i class="ri-twitter-fill"></i></a>
-                    <a href=""><i class="ri-facebook-fill"></i></a>
-                    <a href=""><i class="ri-instagram-fill"></i></a>
-                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-          </div>
-  
+
         </div>
-      </section><!-- End Team Section -->
-  
-      <!-- ======= Our Skills Section ======= -->
-      <section id="skills" class="skills">
-        <div class="container">
-  
-          <div class="section-title">
-            <h2>Our Skills</h2>
-            <p>Check our Our Skills</p>
-          </div>
-  
-          <div class="row skills-content">
-  
-            <div class="col-lg-6">
-  
-              <div class="progress">
-                <span class="skill">HTML <i class="val">100%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-  
-              <div class="progress">
-                <span class="skill">CSS <i class="val">90%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-  
-              <div class="progress">
-                <span class="skill">JavaScript <i class="val">75%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-  
-            </div>
-  
-            <div class="col-lg-6">
-  
-              <div class="progress">
-                <span class="skill">PHP <i class="val">80%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-  
-              <div class="progress">
-                <span class="skill">WordPress/CMS <i class="val">90%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-  
-              <div class="progress">
-                <span class="skill">Photoshop <i class="val">55%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-  
-            </div>
-  
-          </div>
-  
-        </div>
-    </section><!-- End Our Skills Section -->
+
+      </div>
+    </section>
+    <!-- End Our Story Section -->
+
   
 </main><!-- End #main -->
   

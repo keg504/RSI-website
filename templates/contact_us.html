@@ -5,15 +5,32 @@
 {% endblock %}
 
 {% block main %}
-    <!-- ======= Big Picture Section ======= -->
-    <section id="hero" class="d-flex align-items-center justify-content-center">
-        <div class="container position-relative">
-            <h1>Contact Us </h1>
+ <!-- ======= Big Picture Section ======= -->
+<!-- <section id="hero">
+  <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+    <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+    <div class="carousel-inner" role="listbox">
+
+      <div class="carousel-item active" style="background-image: url(static/img/surgery.jpg)">
+        <div class="carousel-container">
+          <div class="container">
+            <h2 class="animate__animated animate__fadeInDown">Contact US</h2>
+            <p class="animate__animated animate__fadeInUp">We are here to help.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-    </section><!-- End Big Picture -->
+
+  </div>
+</section> -->
+<!-- End Big Picture Section -->
 
 <!-- ======= Contact Section ======= -->
-  <section id="contact" class="contact">
+<!-- <main id="main"> -->
+  <!-- <section id="contact" class="contact">
     <div class="container">
 
       <div class="row justify-content-center" data-aos="fade-up">
@@ -49,9 +66,10 @@
         </div>
 
       </div>
+    </div>
+  </section> -->
 
-
-    <div>
+    <!-- <div> -->
         <form action="/test_form" method="post">
             <div>
                 <div>{{ form.name.label }}: {{ form.name(placeholder="Your Name") }}</div>
@@ -61,5 +79,9 @@
             <div>{{ form.message.label }}: {{ form.message(placeholder="Your message to us") }}</div>
             <div>{{ form.send_message() }}</div>
         </form>
-    </div>
+    <!-- </div> -->
+
+
+
+<!-- </main> -->
 {% endblock %}

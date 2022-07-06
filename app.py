@@ -52,6 +52,10 @@ def about():
 def affiliates():
     return render_template("affiliates.html")
 
+@app.route("/leadership")
+def leadership():
+    return render_template("leadership.html")
+
 @app.route("/contact_us", methods=["GET", "POST"])
 def contact_us():
     return render_template("contact_us.html")
