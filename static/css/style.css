@@ -810,128 +810,182 @@ section {
   min-height: 400px;
 }
 
+
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
-.missions .content h2 {
+.about .content h2 {
   font-weight: 700;
   font-size: 48px;
   line-height: 60px;
   margin-bottom: 20px;
   text-transform: uppercase;
 }
-.missions .content h3 {
+.about .content h3 {
   font-weight: 500;
   line-height: 32px;
   font-size: 24px;
 }
-.missions .content ul {
+.about .content ul {
   list-style: none;
   padding: 0;
 }
-.missions .content ul li {
+.about .content ul li {
   padding: 10px 0 0 28px;
   position: relative;
 }
-.missions .content ul i {
+.about .content ul i {
   left: 0;
   top: 7px;
   position: absolute;
   font-size: 20px;
   color: #d9232d;
 }
-.missions .content p:last-child {
+.about .content p:last-child {
   margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
+# Missions
+--------------------------------------------------------------*/
+
+#missions {
+  padding: 15px 0;
+  background: #4986bfe4;
+  min-height: 40px;
+  margin-top: 82px;
+  color: #fff;
+  transform: skewY(-3deg)
+}
+
+#missions .container {
+  position: relative;
+  z-index: 10;
+}
+#missions .content {
+  padding: 30px 30px 30px 0;
+}
+#missions .content h3 {
+  font-weight: 700;
+  font-size: 34px;
+  margin-bottom: 30px;
+  transform: skewY(3deg)
+}
+/* #missions .content p {
+  margin-bottom: 30px;
+} */
+/* #missions .icon-boxes .icon-box {
+  margin-top: 30px;
+} */
+/* #missions .icon-boxes .icon-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+} */
+#missions .icon-boxes p {
+  font-size: 15px;
+  color: #cccccc;
+  transform: skewY(3deg)
+}
+/* @media (max-width: 1200px) {
+  #missions .content {
+    padding-right: 0;
+  }
+}
+@media (max-width: 768px) {
+  #missions {
+    text-align: center;
+  }
+} */
+
+/*--------------------------------------------------------------
 # Our Story Section
 --------------------------------------------------------------*/
-.about h2 {
+.story h2 {
   font-size: 48px;
   font-weight: 700;
   font-family: var(--font-secondary);
   margin: 30px 0;
 }
 
-@media (min-width: 991px) {
-  .about h2 {
+/* @media (min-width: 991px) {
+  .story h2 {
     max-width: 65%;
     margin: 0 0 80px 0;
   }
-}
+} */
 
-.about .our-story {
+.story .our-story {
   padding: 40px;
   background-color: #f5f6f7;
 }
 
 @media (min-width: 991px) {
-  .about .our-story {
+  .story .our-story {
     padding-right: 35%;
   }
 }
 
-.about .our-story h4 {
+.story .our-story h4 {
   text-transform: uppercase;
   font-size: 18px;
   color: #838893;
 }
 
-.about .our-story h3 {
+.story .our-story h3 {
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 20px;
   color: var(--color-secondary);
 }
 
-.about .our-story p:last-child {
+.story .our-story p:last-child {
   margin-bottom: 0;
 }
 
-.about ul {
+.story ul {
   list-style: none;
   padding: 0;
   font-size: 15px;
 }
 
-.about ul li {
+.story ul li {
   padding: 5px 0;
   display: flex;
   align-items: center;
 }
 
-.about ul i {
+.story ul i {
   font-size: 20px;
   margin-right: 4px;
   color: var(--color-primary);
 }
 
-.about .watch-video i {
+.story .watch-video i {
   font-size: 32px;
   transition: 0.3s;
   color: var(--color-primary);
 }
 
-.about .watch-video a {
+.story .watch-video a {
   font-weight: 600;
   color: var(--color-secondary);
   margin-left: 8px;
   transition: 0.3s;
 }
 
-.about .watch-video:hover a {
+.story .watch-video:hover a {
   color: var(--color-primary);
 }
 
-.about .about-img {
+.story .about-img {
   min-height: 600px;
   background-size: cover;
   background-position: center;
 }
 
 @media (min-width: 992px) {
-  .about .about-img {
+  .story .about-img {
     position: absolute;
     top: 0;
     right: 0;
@@ -1101,6 +1155,7 @@ section {
   }
 }
 
+
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
@@ -1225,6 +1280,10 @@ section {
     transform: rotate(360deg);
   }
 }
+
+/* .contact . css-class{
+  
+} */
 
 /*--------------------------------------------------------------
 # Footer
