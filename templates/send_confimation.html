@@ -6,5 +6,25 @@
 
 
 {% block main %}
-    <h2>{{ confirmation }}</h2>
+      <!-- ======= Big Picture Section ======= -->
+  <section id="hero">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+  
+      <div class="carousel-inner" role="listbox">
+  
+        <div class="carousel-item active" style="background-image: url(static/img/about-us.jpg)">
+          <div class="carousel-container">
+            <div class="container">
+              <h2 class="animate__animated animate__fadeInDown">{{ confirmation }}</h2>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+    </div>
+  </section>
+  <!-- End Big Picture Section -->
 {% endblock %}
