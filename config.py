@@ -1,4 +1,4 @@
-TESTING = True
+# TESTING = True
 MAIL_SERVER ='smtp.mailtrap.io'
 MAIL_PORT = 2525
 MAIL_USERNAME = '8b3ad7288a197c'
