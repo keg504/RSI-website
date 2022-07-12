@@ -3,6 +3,7 @@ import sys
 import logging
 from logging import Formatter
 from click import confirmation_option
+import git
 
 from flask import Flask, redirect, render_template, request
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
@@ -13,6 +14,19 @@ from flask_mail import Mail, Message
 
 # Configure application name
 app = Flask(__name__)
+
+# Configure webhook to push website to PythonAnywhere
+@app.route('/webhook', methods=['POST'])
+def webhook():
+    if request.method == 'POST':
+        repo = git.Repo('./RSI-website')
+        origin = repo.remotes.origin
+        repo.create_head('main', 
+    origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
+        origin.pull()
+        return '', 200
+    else:
+        return '', 400
 
 # App configuration for (this file will not be uploaded to Github)
 app.config.from_pyfile('config.py')
