@@ -1,87 +1,181 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Test Form
+    Contact Us
 {% endblock %}
 
 {% block main %}
- <!-- ======= Big Picture Section ======= -->
-<!-- <section id="hero">
-  <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+<main id="main">
 
-    <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+  <!-- ======= Big Picture Section ======= -->
+  <section id="hero">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
-    <div class="carousel-inner" role="listbox">
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
-      <div class="carousel-item active" style="background-image: url(static/img/surgery.jpg)">
-        <div class="carousel-container">
-          <div class="container">
-            <h2 class="animate__animated animate__fadeInDown">Contact US</h2>
-            <p class="animate__animated animate__fadeInUp">We are here to help.</p>
+      <div class="carousel-inner" role="listbox">
+
+        <div class="carousel-item active" style="background-image: url(static/img/products/products.jpg)">
+          <div class="carousel-container">
+            <div class="container">
+              <h2 class="animate__animated animate__fadeInDown">Our Products</h2>
+              <p class="animate__animated animate__fadeInUp">These are our products.</p>
+            </div>
           </div>
         </div>
+
       </div>
 
     </div>
+  </section>
+  <!-- End Big Picture Section -->
 
-  </div>
-</section> -->
-<!-- End Big Picture Section -->
+
+  <!-- ======= Contact Section ======= -->
+  <section id="contact" class="contact">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row gy-4 info-wrap">
+        <div class="col-lg-6">
+          <div class="info-box mb-4">
+            <i class="bx bx-map"></i>
+            <h3>Our Address</h3>
+            <!-- <p>193, Near DEO Office,<br>
+              United Colony, Ward-20<br>
+              Dimapur, Nagaland 797112<br>
+              India <br>
+            </p> -->
+            <p>193, Near DEO Office,
+              United Colony, Ward-20
+              Dimapur, Nagaland 797112
+              India 
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="info-box  mb-4">
+            <i class="bx bx-envelope"></i>
+            <h3>Email Us</h3>
+            <p>kesochie[at]gmail.com</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="info-box  mb-4">
+            <i class="bx bx-phone-call"></i>
+            <h3>Call Us</h3>
+            <p>+91 9856300864<br>+91 8056310595</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="col-lg-6">
+          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <div class="row">
+              <div class="col form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="col form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            </div>
+            <div class="my-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div>
+            <div class="text-center"><button type="submit">Send Message</button></div>
+          </form>
+        </div>
+
+      </div> -->
+
+      <!-- <div class="container"> -->
+        <div class="row mt-5 justify-content-center" data-aos="fade-up">
+          <div class="col-lg-11">
+            <form action="/contact_us" method="post" class="email-form">
+              {{ form.csrf_token }}
+                <div class="row">
+                    <div class="col-md-6 form-group">{{ form.name.label }}: {{ form.name(placeholder="Your Name", class="form-control") }}</div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">{{ form.email.label }}: {{ form.email(placeholder="Your email address", class="form-control") }}</div>
+                </div>
+                <div class="form-group mt-3">{{ form.subject.label }}: {{ form.subject(placeholder="Subject", class="form-control") }}</div>
+                <div class="form-group mt-3">{{ form.message.label }}: {{ form.message(placeholder="Your message to us", class="form-control") }}</div>
+                <div class="text-center">{{ form.send_message(class="button") }}</div>
+            </form>
+          </div>
+        </div>
+      <!-- </div> -->
+
+
+
+
+    </div>
+  </section><!-- End Contact Section -->
 
 <!-- ======= Contact Section ======= -->
-<!-- <main id="main"> -->
-  <!-- <section id="contact" class="contact">
-    <div class="container">
+<!-- <section id="contact" class="contact">
+  <div class="container">
 
-      <div class="row justify-content-center" data-aos="fade-up">
+    <div class="row justify-content-center" data-aos="fade-up">
 
-        <div class="col-lg-10">
+      <div class="col-lg-10">
 
-          <div class="info-wrap">
-            <div class="row">
-              <div class="col-lg-4 info">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>193, Near DEO Office,<br>
-                    United Colony, Ward-20<br>
-                    Dimapur, Nagaland 797112<br>
-                    India <br>
-                </p>
-              </div>
+        <div class="info-wrap">
+          <div class="row">
+            <div class="col-lg-4 info">
+              <i class="bi bi-geo-alt"></i>
+              <h4>Location:</h4>
+              <p>193, Near DEO Office,<br>
+                  United Colony, Ward-20<br>
+                  Dimapur, Nagaland 797112<br>
+                  India <br>
+              </p>
+            </div>
 
-              <div class="col-lg-4 info mt-4 mt-lg-0">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>kesochie[at]gmail.com</p>
-              </div>
+            <div class="col-lg-4 info mt-4 mt-lg-0">
+              <i class="bi bi-envelope"></i>
+              <h4>Email:</h4>
+              <p>kesochie[at]gmail.com</p>
+            </div>
 
-              <div class="col-lg-4 info mt-4 mt-lg-0">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+91 9856300864<br>+91 8056310595</p>
-              </div>
+            <div class="col-lg-4 info mt-4 mt-lg-0">
+              <i class="bi bi-phone"></i>
+              <h4>Call:</h4>
+              <p>+91 9856300864<br>+91 8056310595</p>
             </div>
           </div>
-
         </div>
 
       </div>
-    </div>
-  </section> -->
 
-    <!-- <div> -->
-        <form action="/test_form" method="post">
-            <div>
-                <div>{{ form.name.label }}: {{ form.name(placeholder="Your Name") }}</div>
-                <div>{{ form.email.label }}: {{ form.email(placeholder="Your email address") }}</div>
+    </div> -->
+
+
+  <!-- <div class="container">
+    <div class="row mt-5 justify-content-center" data-aos="fade-up">
+      <div class="col-lg-10">
+        <form action="/test_form" method="post" class="php-email-form">
+            <div class="row">
+                <div>{{ form.name.label }}: {{ form.name(placeholder="Your Name", class="col-md-6 test form-group") }}</div>
+                <div>{{ form.email.label }}: {{ form.email(placeholder="Your email address", class="col-md-6 test mt-3 mt-md-0 form-group") }}</div>
             </div>
-            <div>{{ form.subject.label }}: {{ form.subject(placeholder="Subject") }}</div>
-            <div>{{ form.message.label }}: {{ form.message(placeholder="Your message to us") }}</div>
-            <div>{{ form.send_message() }}</div>
+            <div>{{ form.subject.label }}: {{ form.subject(placeholder="Subject", class="test mt-3 form-group") }}</div>
+            <div>{{ form.message.label }}: {{ form.message(placeholder="Your message to us", class="test mt-3 form-group") }}</div>
+            <div>{{ form.send_message(class="button") }}</div>
         </form>
-    <!-- </div> -->
-
-
-
-<!-- </main> -->
+      </div>
+    </div>
+  </div> -->
+</main>
 {% endblock %}

@@ -61,18 +61,13 @@ def leadership():
 
 @app.route("/contact_us", methods=["GET", "POST"])
 def contact_us():
-    return render_template("contact_us.html")
-
-# Test route for forms, remove/change in production
-@app.route("/test_form", methods=["GET", "POST"])
-def test_form():
-    class TestForm(FlaskForm):
+    class ContactForm(FlaskForm):
         name = StringField("Name")
         email = StringField("Email", [validators.email()])
         subject = StringField("Subject", [validators.Length(min=5)])
         message = TextAreaField("Message", [validators.Length(min=10)])
         send_message = SubmitField()
-    form = TestForm()
+    form = ContactForm()
     if form.validate_on_submit():
         contact_msg = {
             "name" : form.name.data,
@@ -88,7 +83,7 @@ def test_form():
         mail.send(msg)
         return redirect("/send_confirmation")
     else:
-        return render_template("test_form.html", form=form)
+        return render_template("contact_us.html", form=form)
 
 @app.route("/send_confirmation")
 def send_confirmation():
