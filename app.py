@@ -77,7 +77,7 @@ def test_form():
             "message" : form.message.data
         }
 
-        msg = Message(contact_msg["subject"], sender=(contact_msg["name"], contact_msg["email"]))
+        msg = Message(contact_msg["subject"], sender=(f"RSI website: {contact_msg['name']}", contact_msg['email']))
         msg.body = f"From: {contact_msg['name']} ({contact_msg['email']})\nSubject: {contact_msg['subject']}\n\n{contact_msg['message']}"
         msg.recipients = ["test@mailtrap.io"]
         print(msg)
