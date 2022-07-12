@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block main %}
+<<<<<<< HEAD
 <main id="main">
 
   <!-- ======= Big Picture Section ======= -->
@@ -26,6 +27,27 @@
 
       </div>
 
+=======
+    <div>
+        <form action="/test_form" method="post">
+            {{ form.csrf_token }}
+            <div>
+                <div>{{ form.name.label }}: {{ form.name(placeholder="Your Name") }}</div>
+                <div>{{ form.email.label }}: {{ form.email(placeholder="Your email address") }}</div>
+            </div>
+            <div>{{ form.subject.label }}: {{ form.subject(placeholder="Subject") }}</div>
+            <div>{{ form.message.label }}: {{ form.message(placeholder="Your message to us") }}</div>
+            <div>{{ form.send_message() }}</div>
+            <!-- Error checking for form -->
+            {% if form.name.errors %}
+                <ul class="errors">
+                {% for error in form.name.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        </form>
+>>>>>>> Contact-form
     </div>
   </section>
   <!-- End Big Picture Section -->
