@@ -103,7 +103,8 @@
       <!-- <div class="container"> -->
         <div class="row mt-5 justify-content-center" data-aos="fade-up">
           <div class="col-lg-11">
-            <form action="/test_form" method="post" class="php-email-form">
+            <form action="/test_form" method="post" class="email-form">
+              {{ form.csrf_token }}
                 <div class="row">
                     <div class="col-md-6 form-group">{{ form.name.label }}: {{ form.name(placeholder="Your Name", class="form-control") }}</div>
                     <div class="col-md-6 form-group mt-3 mt-md-0">{{ form.email.label }}: {{ form.email(placeholder="Your email address", class="form-control") }}</div>
