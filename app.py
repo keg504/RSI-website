@@ -8,6 +8,7 @@ from flask import Flask, redirect, render_template, request
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from helpers import apology
 from flask_wtf import FlaskForm
+from flask_wtf.recaptcha import RecaptchaField
 from wtforms import StringField, SubmitField, TextAreaField, validators
 from flask_mail import Mail, Message
 
@@ -67,6 +68,7 @@ def test_form():
         email = StringField("Email", [validators.email()])
         subject = StringField("Subject", [validators.Length(min=5)])
         message = TextAreaField("Message", [validators.Length(min=10)])
+        recaptcha = RecaptchaField()
         send_message = SubmitField()
     form = TestForm()
     if form.validate_on_submit():

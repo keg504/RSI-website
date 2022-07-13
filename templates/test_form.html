@@ -15,6 +15,7 @@
             </div>
             <div>{{ form.subject.label }}: {{ form.subject(placeholder="Subject") }}</div>
             <div>{{ form.message.label }}: {{ form.message(placeholder="Your message to us") }}</div>
+            <div>{{ form.recaptcha }}</div>
             <div>{{ form.send_message() }}</div>
             <!-- Error checking for form -->
             {% if form.name.errors %}
@@ -22,6 +23,11 @@
                 {% for error in form.name.errors %}
                     <li>{{ error }}</li>
                 {% endfor %}
+                    <li>
+                        {% for error in form.recaptcha.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </li>
                 </ul>
             {% endif %}
         </form>
