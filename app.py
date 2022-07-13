@@ -61,6 +61,18 @@ def services():
 def research():
     return render_template("research.html")
 
+@app.route("/research/laptop_cystoscope")
+def laptop_cystoscope():
+    return render_template("laptop_cystoscope.html")
+
+@app.route("/research/GILLS")
+def GILLS():
+    return render_template("GILLS.html")
+
+@app.route("/research/Renal_stones_URS")
+def Renal_stones_URS():
+    return render_template("Renal_stones_URS.html")
+
 @app.route("/about")
 def about():
     return render_template("about.html")
