@@ -713,16 +713,16 @@ section {
   transition: 0.3s;
 }
 .products .read-more a:hover {
-  color: #5fcf80;
+  color: #52a1cb;
 }
 .products .card:hover img {
   transform: scale(1.1);
 }
 .products .card:hover .card-body {
-  border-color: #5fcf80;
+  border-color: #52a1cb;
 }
 .products .card:hover .card-body .card-title a {
-  color: #5fcf80;
+  color: #52a1cb;
 }
 
 /* Services Section
@@ -828,7 +828,7 @@ section {
   margin-bottom: 20px;
   text-transform: uppercase;
 }
-.about .content h3 {
+/* .about .content h3 {
   font-weight: 500;
   line-height: 32px;
   font-size: 24px;
@@ -847,7 +847,7 @@ section {
   position: absolute;
   font-size: 20px;
   color: #d9232d;
-}
+} */
 .about .content p:last-child {
   margin-bottom: 0;
 }
@@ -859,24 +859,27 @@ section {
 #missions {
   padding: 15px 0;
   background: #4986bfe4;
-  min-height: 40px;
-  margin-top: 82px;
+  min-height: 300px;
+  margin: 80px 0 80px 0;
   color: #fff;
   transform: skewY(-3deg)
 }
 
 #missions .container {
   position: relative;
-  z-index: 10;
+  /* z-index: 10; */
+  transform: skewY(3deg)
+
 }
 #missions .content {
-  padding: 30px 30px 30px 0;
+  padding: 120px 30px 30px 0;
 }
 #missions .content h3 {
+  /* padding: 60px 30px 30px 0; */
   font-weight: 700;
-  font-size: 34px;
-  margin-bottom: 30px;
-  transform: skewY(3deg)
+  font-size: 50px;
+  /* margin-bottom: 30px; */
+  /* transform: skewY(3deg) */
 }
 /* #missions .content p {
   margin-bottom: 30px;
@@ -890,11 +893,12 @@ section {
   margin: 0 0 10px 0;
 } */
 #missions .icon-boxes p {
-  font-size: 15px;
-  color: #cccccc;
-  transform: skewY(3deg)
+  font-size: 20px;
+  padding: 50px 30px 30px 0;
+  /* color: #cccccc; */
+  /* transform: skewY(3deg) */
 }
-/* @media (max-width: 1200px) {
+@media (max-width: 1200px) {
   #missions .content {
     padding-right: 0;
   }
@@ -903,7 +907,7 @@ section {
   #missions {
     text-align: center;
   }
-} */
+}
 
 /*--------------------------------------------------------------
 # Our Story Section
