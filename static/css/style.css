@@ -611,7 +611,7 @@ section {
 }
 .why-us .video-box img {
   border-right: 100px;
-  height: 500px;
+  height: 470px;
   width: 3000px;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -1150,7 +1150,6 @@ section {
   background-size: cover;
   background-position: center; 
 }
-
 
 
 @media (min-width: 992px) {
