@@ -4,6 +4,7 @@ import logging
 from logging import Formatter
 from click import confirmation_option
 import git
+import os
 
 from flask import Flask, redirect, render_template, request
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
@@ -12,8 +13,10 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, TextAreaField, validators
 from flask_mail import Mail, Message
 
+STATIC_DIR = os.path.abspath('./static')
+
 # Configure application name
-app = Flask(__name__)
+app = Flask(__name__, static_folder=STATIC_DIR)
 
 # Configure webhook to push website to PythonAnywhere
 @app.route('/webhook', methods=['POST'])
@@ -69,9 +72,9 @@ def laptop_cystoscope():
 def GILLS():
     return render_template("GILLS.html")
 
-@app.route("/research/Renal_stones_URS")
+@app.route("/research/renal_stones_URS")
 def Renal_stones_URS():
-    return render_template("Renal_stones_URS.html")
+    return render_template("renal_stones_URS.html")
 
 @app.route("/about")
 def about():
