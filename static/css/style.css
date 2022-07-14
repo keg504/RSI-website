@@ -11,6 +11,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #4d4643;
+  background: rgb(73, 134, 191, 0.2);
 }
 
 a {
@@ -457,6 +458,7 @@ h1, h2, h3, h4, h5, h6 {
 section {
   padding: 60px 0;
   overflow: hidden;
+  /* background: rgb(104, 164, 196, 0.3); */
 }
 
 /* .section-bg {
@@ -574,7 +576,9 @@ section {
   color: rgb(113, 213, 50);
   text-align: center;
 }*/
-
+/* .events {
+  background:rgba(77, 129, 194, 0.277);
+} */
 
 .events .img {
   border-radius: 8px;
@@ -664,6 +668,7 @@ section {
 .why-us .container{
   box-shadow: 5px 5px 25px 5px rgba(214, 215, 216, 0.8);
   background: rgb(255, 255, 255);
+  border-radius: 8px;
 }
 .why-us .icon-box {
   margin-top: 50px;
@@ -751,8 +756,8 @@ section {
   position: relative;
 }
 .products .card-img {
-  /* width: calc(100% + 60px); */
-  width: 630px;
+  width: calc(100% + 60px);
+  /* width: 630px; */
   height: 430px;
   margin-left: -30px;
   overflow: hidden;
@@ -888,7 +893,7 @@ section {
 }
 .features .icon-box p {
   font-size: 15px;
-  color: #848484;
+  color: #3e3e3e;
   margin-left: 60px;
 }
 .features .image {
@@ -1481,11 +1486,12 @@ section {
 .contact .info-wrap {
   /* box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1); */
   padding: 0 30px 0 30px;
+  /* box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  background:rgb(255, 255, 255); */
 }
 .contact .info-box {
   color: #444444;
   text-align: center;
-  /* box-shadow: 0 0 30px rgba(214, 215, 216, 0.3); */
   padding: 20px 0 10px 0;
 }
 .contact .info-box i {
@@ -1497,7 +1503,7 @@ section {
 }
 .contact .info-box h3 {
   font-size: 20px;
-  color: #777777;
+  color: #2a2a2a;
   font-weight: 700;
   margin: 10px 0;
 }
@@ -1508,7 +1514,7 @@ section {
   margin-bottom: 0;
 }
 .contact .email-form {
-  /* box-shadow: 0 0 30px rgba(214, 215, 216, 0.4);
+  /*box-shadow: 0 0 30px rgba(214, 215, 216, 0.4);
   padding: 30px; */
   width: 100%;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
