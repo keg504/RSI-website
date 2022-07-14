@@ -16,7 +16,7 @@ from flask_mail import Mail, Message
 STATIC_DIR = os.path.abspath('./static')
 
 # Configure application name
-app = Flask(__name__, static_folder=STATIC_DIR)
+app = Flask(__name__, template_folder='./templates', static_url_path='/static')
 
 # Configure webhook to push website to PythonAnywhere
 @app.route('/webhook', methods=['POST'])
