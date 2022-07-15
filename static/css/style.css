@@ -474,6 +474,26 @@ section {
   position: relative;
   padding-bottom: 15px;
 }
+
+.section-header .people {
+  font-size: 32px;
+  color: #333;
+  text-transform: uppercase;
+  text-align: left;
+  left: 10%;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-header .people::before {
+  left: calc(15% - 60px);
+}
+
+.section-header .people::after {
+  left: calc(15% - 20px);
+}
+
 .section-header h3::before {
   content: "";
   position: absolute;
@@ -498,6 +518,8 @@ section {
   text-align: Left;
   padding-bottom: 30px;
   color: #333;
+  left: 21%;
+  position: relative;
 }
 
 /*--------------------------------------------------------------
@@ -1238,6 +1260,7 @@ section {
   box-shadow: 0 5px 25px 0 rgba(214, 215, 216, 0.6);
   background: #fff;
   padding-bottom: 40px;
+  border-radius: 0.5rem;
   /* z-index: 10; */
 }
 .affiliates .content img {
