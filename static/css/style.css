@@ -519,7 +519,9 @@ section {
   padding-bottom: 30px;
   color: #333;
   left: 21%;
-  position: relative;
+  @media only screen (min-width: 768px) {
+    position: relative;
+  }
 }
 
 /*--------------------------------------------------------------
