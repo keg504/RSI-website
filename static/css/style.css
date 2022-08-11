@@ -325,7 +325,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 #hero .carousel-item::before {
   content: "";
-  /* change background color/filter of the picture*/
   background-color: rgba(25, 130, 255, 0.277);
 }
 #hero .carousel-container {
@@ -1390,6 +1389,7 @@ section {
 @media (min-width: 992px) {
   #team .about-img {
     position: absolute;
+    display: flex;
     object-fit: scale-down;
     right: 0;
     bottom: 0%;

@@ -4036,9 +4036,6 @@
   .bx-layer-plus:before {
     content: "\ed93";
   }
-  .bx-layout:before {
-    content: "\ed94";
-  }
   .bx-left-arrow:before {
     content: "\ed95";
   }
@@ -4575,9 +4572,6 @@
   }
   .bx-rewind-circle:before {
     content: "\ee47";
-  }
-  .bx-right-arrow:before {
-    content: "\ee48";
   }
   .bx-right-arrow-alt:before {
     content: "\ee49";
