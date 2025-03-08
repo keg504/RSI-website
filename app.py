@@ -88,6 +88,10 @@ def affiliates():
 def leadership():
     return render_template("leadership.html")
 
+@app.route("/privacy")
+def privacy_policy():
+    return render_template("privacy_policy.html")
+
 @app.route("/contact_us", methods=["GET", "POST"])
 def contact_us():
     class ContactForm(FlaskForm):
